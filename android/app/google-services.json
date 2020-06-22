@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1029285460866",
+    "firebase_url": "https://book-store-2-df55c.firebaseio.com",
+    "project_id": "book-store-2-df55c",
+    "storage_bucket": "book-store-2-df55c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029285460866:android:8f146efbf34cace5ebed9b",
+        "android_client_info": {
+          "package_name": "com.example.book_store_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029285460866-qidc4mtfvqmj22sa5s0u4m0ar9ascvqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAypdXsZ-myI09xhkORthHcz04IvkJ6QU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029285460866-qidc4mtfvqmj22sa5s0u4m0ar9ascvqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
