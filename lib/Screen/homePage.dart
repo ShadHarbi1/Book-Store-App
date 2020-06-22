@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:book_store_app/backend/controllers/authentication.dart';
+import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'dart:async';
-//later here i will import the models
+
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback})
@@ -17,8 +17,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final FirebaseDatabase _database = FirebaseDatabase.instance;
+
+   final FirebaseDatabase _database = FirebaseDatabase.instance;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  
 
   signOut() async {
     try {
@@ -32,11 +35,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FlatButton(
-          child: new Text('Logout',
-              style: new TextStyle(fontSize: 17.0, color: Colors.white)),
-          onPressed: signOut),
-      backgroundColor: Colors.red,
+       appBar: new AppBar(
+         backgroundColor: Colors.white,
+          actions: <Widget>[
+            new FlatButton(
+                child: new Text('Logout',
+                    style: new TextStyle(fontSize: 17.0, color: Colors.teal)),
+                onPressed: signOut)
+          ],
+        ),
+      body: Container(
+    ),
+     
+      backgroundColor: Colors.teal,
+      
+      
     );
   }
 }

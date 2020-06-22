@@ -1,7 +1,8 @@
-import 'package:book_store_app/Screen/homePage.dart';
+import 'package:book_store_app/Screen/mainPage.dart';
 import 'package:book_store_app/Screen/loginSignUp.dart';
 import 'package:flutter/material.dart';
 import 'package:book_store_app/backend/controllers/authentication.dart';
+import 'package:book_store_app/Screen/homePage.dart';
 
 
 enum AuthStatus {
@@ -78,7 +79,7 @@ class _RootPageState extends State<RootPage> {
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
-          return new HomePage(
+          return  MainPage(
             userId: _userId,
             auth: widget.auth,
             logoutCallback: logoutCallback,

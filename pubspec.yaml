@@ -22,6 +22,8 @@ dependencies:
   font_awesome_flutter: ^8.8.1
   #font
   google_fonts: ^1.1.0
+  #design
+  curved_navigation_bar: ^0.3.3
 
 
   cupertino_icons: ^0.1.3
