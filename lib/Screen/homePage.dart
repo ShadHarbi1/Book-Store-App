@@ -1,54 +1,36 @@
-import 'package:book_store_app/backend/controllers/authentication.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'dart:async';
+//import 'package:test_my_app/backEnd/services/Authentication.dart';
+//import 'package:test_my_app/backEnd/services/photoUpload.dart';
 
+class HomePage extends StatefulWidget{
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.auth, this.userId, this.logoutCallback})
-      : super(key: key);
-
-  final BaseAuth auth;
-  final VoidCallback logoutCallback;
-  final String userId;
+HomePage({Key key, this.title, this.uid}) : super(key: key); 
+  //update the constructor to include the uid
+  final String title;
+  final String uid; //include this
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<StatefulWidget> createState() {
+    return _HomePageState();
+  }
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>{
 
-   final FirebaseDatabase _database = FirebaseDatabase.instance;
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  
-
-  signOut() async {
-    try {
-      await widget.auth.signOut();
-      widget.logoutCallback();
-    } catch (e) {
-      print(e);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-       appBar: new AppBar(
-         backgroundColor: Colors.white,
-          actions: <Widget>[
-            new FlatButton(
-                child: new Text('Logout',
-                    style: new TextStyle(fontSize: 17.0, color: Colors.teal)),
-                onPressed: signOut)
-          ],
-        ),
-      body: Container(
-    ),
+    return new Scaffold(
      
-      backgroundColor: Colors.teal,
-      
+
+      body: new Container(
+        child: RaisedButton(
+          
+          onPressed:(){}
+        ),
+      ),
+
       
     );
   }

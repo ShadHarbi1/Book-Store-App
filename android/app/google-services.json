@@ -8,9 +8,38 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1029285460866:android:8f146efbf34cace5ebed9b",
+        "mobilesdk_app_id": "1:1029285460866:android:04f4e65ed457cb54ebed9b",
         "android_client_info": {
           "package_name": "com.example.book_store_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029285460866-qidc4mtfvqmj22sa5s0u4m0ar9ascvqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAypdXsZ-myI09xhkORthHcz04IvkJ6QU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029285460866-qidc4mtfvqmj22sa5s0u4m0ar9ascvqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029285460866:android:e002658b68a21fd7ebed9b",
+        "android_client_info": {
+          "package_name": "com.example.test_my_app"
         }
       },
       "oauth_client": [
