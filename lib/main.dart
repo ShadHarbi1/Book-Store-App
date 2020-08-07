@@ -1,10 +1,11 @@
 import 'package:book_store_app/backend/controllers/databaseHelper.dart';
-import 'package:book_store_app/Screen/catalogPage.dart';
-import 'package:book_store_app/Screen/accountPage.dart';
-import 'package:book_store_app/Screen/addProduct.dart';
-import 'package:book_store_app/Screen/homePage.dart';
-import 'package:book_store_app/Screen/loginPage.dart';
-import 'package:book_store_app/Screen/signupPage.dart';
+import 'package:book_store_app/frontEnd/Screen/catalogPage.dart';
+import 'package:book_store_app/frontEnd/Screen/accountPage.dart';
+import 'package:book_store_app/frontEnd/Screen/addProduct.dart';
+import 'package:book_store_app/frontEnd/Screen/homePage.dart';
+import 'package:book_store_app/frontEnd/Screen/loginPage.dart';
+import 'package:book_store_app/frontEnd/Screen/signupPage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -92,7 +93,7 @@ class _MyNavBarState extends State<MyNavBar> {
           ],
           color: Colors.white,
           buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.teal,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
           onTap: (int tappedIndex) {

@@ -1,6 +1,5 @@
-import 'package:book_store_app/Screen/loginPage.dart';
+import 'package:book_store_app/frontEnd/Screen/loginPage.dart';
 import 'package:book_store_app/backend/controllers/databaseHelper.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AccountPage extends StatefulWidget {

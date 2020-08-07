@@ -12,22 +12,15 @@ environment:
 
 dependencies:
   bloc: ^4.0.0    
-  cloud_firestore: ^0.13.7
   flutter_bloc: ^4.0.1 
-  firebase_core: ^0.4.5  
-  firebase_auth: ^0.16.1
-  firebase_storage: ^3.1.6
-  firebase_database: ^3.1.6
   google_fonts: ^1.1.0
   image_picker: ^0.6.7+2
-  progress_indicators: ^0.1.5
-  intl: ^0.16.1
   splashscreen: ^1.2.0
   curved_navigation_bar: ^0.3.3
   http: ^0.12.1
   shared_preferences: ^0.5.8
-
-
+  flutter_redux: ^0.6.0
+  redux: ^4.0.0+3 
   cupertino_icons: ^0.1.3
 
 dev_dependencies:
@@ -36,8 +29,6 @@ dev_dependencies:
 
 
 flutter:
-
-  
   uses-material-design: true
 
 fonts:  

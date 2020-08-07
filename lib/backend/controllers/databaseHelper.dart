@@ -1,3 +1,4 @@
+import 'package:book_store_app/backend/models/post_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -6,56 +7,19 @@ class DatabaseHelper {
   String postUrl = "http://192.168.56.1:4545/feed";
   String authUrl = "http://192.168.56.1:4545/auth";
 
-  var status;
-
   var token;
-  Map data;
-  login(String email, String password, String name) async {
-    String myUrl = "http://192.168.8.102:4545/auth/login";
-    final response = await http.post(myUrl, headers: {
-      'Accept': 'application/json'
-    }, body: {
-      "name": "$name",
-      "email": "$email",
-      "password": "$password"
-    }).then((value) {
-      if (value.statusCode == 200) {
-        data:
-        json.decode(value.body);
-      } else {
-        print("something happened");
-      }
-    });
-  }
 
-  signup(String name, String email, String password) async {
-    String myUrl = "$authUrl/signup";
-    final response = await http.put(myUrl,
-        headers: {'Accept': 'application/json'},
-        body: {"name": "$name", "email": "$email", "password": "$password"});
-    status = response.body.contains('error');
-
-    var data = json.decode(response.body);
-
-    if (status) {
-      print('data : ${data["error"]}');
-    } else {
-      print('data : ${data["token"]}');
-      save(data["token"]);
-    }
-  }
-
-  Future<List> getData() async {
+  Future<Post> getData() async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
 
-    String myUrl = "$postUrl/posts";
-    http.Response response = await http.get(myUrl, headers: {
+    String getAllPostUrl = "http://192.168.1.7:5000/post/all";
+    http.Response response = await http.get(getAllPostUrl, headers: {
       'Accept': 'application/json',
       'Authorization': 'Bearer $value'
     });
-    return json.decode(response.body);
+    return Post.fromJson(json.decode(response.body));
   }
 
   void deleteData(int id) async {
@@ -73,22 +37,27 @@ class DatabaseHelper {
     });
   }
 
-  void addData(String name, String price) async {
+  Future<Post> addPost(String title, String article, String catagory,
+      String picture, String publishedDate) async {
     final prefs = await SharedPreferences.getInstance();
     final key = 'token';
     final value = prefs.get(key) ?? 0;
 
-    String myUrl = "$postUrl/post";
-    http.post(myUrl, headers: {
-      'Accept': 'application/json',
-      'Authorization': 'Bearer $value'
-    }, body: {
-      "name": "$name",
-      "price": "$price"
-    }).then((response) {
-      print('Response status : ${response.statusCode}');
-      print('Response body : ${response.body}');
-    });
+    String myUrl = "";
+    final http.Response response = await http.post(
+      myUrl,
+      headers: {'Accept': 'application/json', 'Authorization': 'Bearer $value'},
+      body: jsonEncode(<String, String>{
+        'title': title,
+        'article': article,
+        'catagory': catagory,
+        'picture': picture,
+        'publishedDate': publishedDate
+      }),
+    );
+    if (response == 201) {
+      return Post.fromJson(json.decode(response.body));
+    }
   }
 
   save(String token) async {

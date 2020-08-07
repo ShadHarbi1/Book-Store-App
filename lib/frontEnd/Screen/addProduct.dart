@@ -8,9 +8,9 @@ class AddProductPage extends StatefulWidget {
 class _AddPageState extends State<AddProductPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.teal,
-      
+    return Scaffold(
+      backgroundColor: Colors.teal,
+      body: Container(),
     );
   }
 }
