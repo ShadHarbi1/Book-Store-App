@@ -24,14 +24,19 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LoginPage(), initialRoute: '/', routes: {
-      // When navigating to the "/" route, build the FirstScreen widget.
-      '/login': (context) => LoginPage(),
-      // When navigating to the "/second" route, build the SecondScreen widget.
-      '/signup': (context) => SignupPage(),
-      '/home': (context) => HomePage(),
-      '/mainPage': (context) => MyNavBar(),
-    });
+    return MaterialApp(
+        theme: ThemeData(),
+        debugShowCheckedModeBanner: false,
+        home: LoginPage(),
+        initialRoute: '/',
+        routes: {
+          // When navigating to the "/" route, build the FirstScreen widget.
+          '/login': (context) => LoginPage(),
+          // When navigating to the "/second" route, build the SecondScreen widget.
+          '/signup': (context) => SignupPage(),
+          '/home': (context) => HomePage(),
+          '/mainPage': (context) => MyNavBar(),
+        });
   }
 }
 

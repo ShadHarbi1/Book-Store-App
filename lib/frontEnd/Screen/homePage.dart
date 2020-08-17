@@ -1,6 +1,7 @@
 import 'package:book_store_app/backend/api/apiBaseHelper.dart';
 import 'package:book_store_app/backend/controllers/databaseHelper.dart';
 import 'package:book_store_app/backend/models/post_model.dart';
+import 'package:book_store_app/frontEnd/widgets/catagoryScroller.dart';
 import 'package:book_store_app/frontEnd/widgets/postListView.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;

@@ -3,14 +3,9 @@ class Post {
   final String article; //the article content
   final String catagory;
   final String picture;
-  final String publishedDate;
+  final String createdAt;
 
-  Post(
-      {this.article,
-      this.catagory,
-      this.picture,
-      this.publishedDate,
-      this.title});
+  Post({this.article, this.catagory, this.picture, this.createdAt, this.title});
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
@@ -18,6 +13,6 @@ class Post {
         article: json['article'] as String,
         catagory: json['catagory'] as String,
         picture: json['picture'] as String,
-        publishedDate: json['publishedDate'] as String);
+        createdAt: json['createdAt'] as String);
   }
 }

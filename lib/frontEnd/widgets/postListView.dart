@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:book_store_app/backend/api/apiBaseHelper.dart';
 import 'package:book_store_app/backend/models/post_model.dart';
 import 'package:flutter/material.dart';
@@ -13,63 +12,121 @@ class PostListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+    return SafeArea(
       child: Scaffold(
-          body: ListView.builder(
-        itemCount: posts.length,
-        itemBuilder: (context, index) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(10.0),
-                constraints: BoxConstraints.expand(
-                  height: Theme.of(context).textTheme.display1.fontSize * 1.1 +
-                      200.0,
-                ),
-                color: Colors.white10,
-                alignment: Alignment.center,
-                child: Card(
-                  margin: EdgeInsets.only(top: 20, bottom: 10),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      ListTile(
-                          contentPadding: EdgeInsets.all(30.0),
-                          title: new Text(
-                            posts[index].title,
-                            textDirection: TextDirection.rtl,
-                            style: GoogleFonts.tajawal(
-                              textStyle: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w300,
+        body: Padding(
+            padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+            child: ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FittedBox(
+                        child: Material(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15.0),
+                      shadowColor: Colors.teal,
+                      elevation: 14.0,
+                      child: Container(
+                          child: Row(children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(children: <Widget>[
+                                Text(
+                                  posts[index].title,
+                                  textDirection: TextDirection.rtl,
+                                  style: GoogleFonts.tajawal(
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                    padding: EdgeInsets.only(top: 20, left: 20),
+                                    child: Text(
+                                      posts[index].createdAt,
+                                      textDirection: TextDirection.ltr,
+                                      style: GoogleFonts.tajawal(
+                                        textStyle: TextStyle(
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.only(top: 20, left: 75),
+                                    child: Text(
+                                      posts[index].catagory,
+                                      textDirection: TextDirection.rtl,
+                                      style: GoogleFonts.tajawal(
+                                        textStyle: TextStyle(
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: 100.0,
+                          height: 100.0,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15.0),
+                            child: Image.network(
+                              posts[index].picture,
+                              fit: BoxFit.cover,
+                              alignment: Alignment.topLeft,
+                              height: 20.0,
+                              width: 20.0,
                             ),
                           ),
-                          leading: new Image.network(
-                            posts[index].picture,
-                            fit: BoxFit.cover,
-                            height: 40.0,
-                            width: 40.0,
-                          ),
-                          subtitle: Text(
-                            posts[index].catagory,
-                            textDirection: TextDirection.rtl,
-                            style: GoogleFonts.tajawal(
-                              textStyle: TextStyle(
-                                fontSize: 15,
-                              ),
-                            ),
-                          )),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          );
-        },
-      )),
+                        ),
+                      ])),
+                    )));
+              },
+            )),
+      ),
     );
   }
 }
+
+/* ListTile(
+  title: new Text(
+  posts[index].title,
+    textDirection:
+    TextDirection.rtl,
+                                                style: GoogleFonts.tajawal(
+                                                  textStyle: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                                ),
+                                              ),
+                                              leading: new Image.network(
+                                                posts[index].picture,
+                                                fit: BoxFit.cover,
+                                                alignment: Alignment.topLeft,
+                                                height: 40.0,
+                                                width: 40.0,
+                                              ),
+                                              subtitle: Text(
+                                                posts[index].catagory,
+                                                textDirection:
+                                                    TextDirection.rtl,
+                                                style: GoogleFonts.tajawal(
+                                                  textStyle: TextStyle(
+                                                    fontSize: 15,
+                                                  ),
+                                                ),
+                                              )
+                                              ), */

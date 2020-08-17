@@ -26,7 +26,7 @@ class ApiBaseHelper {
     final key = 'token';
     final value = prefs.get(key) ?? 0;
 
-    final getPublishedPostUrl = "http://192.168.1.7:5000/post/all";
+    final getPublishedPostUrl = "http://192.168.1.5:5000/post/all";
     final response = await http.get(getPublishedPostUrl, headers: {
       'Accept': 'application/json',
       'Authorization': 'Bearer $value'
