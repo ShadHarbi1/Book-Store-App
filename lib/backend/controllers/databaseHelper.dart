@@ -14,7 +14,7 @@ class DatabaseHelper {
     final key = 'token';
     final value = prefs.get(key) ?? 0;
 
-    String getAllPostUrl = "http://192.168.1.7:5000/post/all";
+    String getAllPostUrl = "http://192.168.1.8:5000/post/all";
     http.Response response = await http.get(getAllPostUrl, headers: {
       'Accept': 'application/json',
       'Authorization': 'Bearer $value'

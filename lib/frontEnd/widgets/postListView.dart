@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:book_store_app/backend/api/apiBaseHelper.dart';
 import 'package:book_store_app/backend/models/post_model.dart';
+import 'package:book_store_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart';
@@ -14,85 +15,95 @@ class PostListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: CustomColors.customDarkBlue,
         body: Padding(
-            padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+            padding: const EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 0.0),
             child: ListView.builder(
+              shrinkWrap: true,
               itemCount: posts.length,
               itemBuilder: (context, index) {
-                return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FittedBox(
-                        child: Material(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15.0),
-                      shadowColor: Colors.teal,
-                      elevation: 14.0,
-                      child: Container(
-                          child: Row(children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
+                return Container(
+                  margin: EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.all(4.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: CustomColors.customPage),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.only(left: 12, right: 12),
+                          width: MediaQuery.of(context).size.width - 100,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Row(children: <Widget>[
-                                Text(
-                                  posts[index].title,
-                                  textDirection: TextDirection.rtl,
-                                  style: GoogleFonts.tajawal(
-                                    textStyle: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w300,
-                                    ),
+                              Text(
+                                posts[index].title,
+                                textDirection: TextDirection.rtl,
+                                style: GoogleFonts.tajawal(
+                                  textStyle: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w300,
                                   ),
                                 ),
-                              ]),
+                              ),
+                              SizedBox(
+                                height: 8,
+                              ),
                               Row(
                                 children: <Widget>[
-                                  Container(
-                                    padding: EdgeInsets.only(top: 20, left: 20),
-                                    child: Text(
-                                      posts[index].createdAt,
-                                      textDirection: TextDirection.ltr,
-                                      style: GoogleFonts.tajawal(
-                                        textStyle: TextStyle(
-                                          fontSize: 15,
-                                        ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    posts[index].createdAt,
+                                    textDirection: TextDirection.rtl,
+                                    style: GoogleFonts.tajawal(
+                                      textStyle: TextStyle(
+                                        fontSize: 15,
                                       ),
                                     ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 4,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  SizedBox(
+                                    width: 8,
                                   ),
-                                  Container(
-                                    padding: EdgeInsets.only(top: 20, left: 75),
-                                    child: Text(
-                                      posts[index].catagory,
-                                      textDirection: TextDirection.rtl,
-                                      style: GoogleFonts.tajawal(
-                                        textStyle: TextStyle(
-                                          fontSize: 15,
-                                        ),
+                                  Text(
+                                    posts[index].catagory,
+                                    textDirection: TextDirection.rtl,
+                                    style: GoogleFonts.tajawal(
+                                      textStyle: TextStyle(
+                                        fontSize: 15,
                                       ),
                                     ),
-                                  ),
+                                  )
                                 ],
                               ),
                             ],
                           ),
                         ),
-                        Container(
-                          width: 100.0,
-                          height: 100.0,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15.0),
-                            child: Image.network(
-                              posts[index].picture,
-                              fit: BoxFit.cover,
-                              alignment: Alignment.topLeft,
-                              height: 20.0,
-                              width: 20.0,
-                            ),
-                          ),
-                        ),
-                      ])),
-                    )));
+                      ),
+                      ClipRRect(
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(16),
+                              bottomRight: Radius.circular(16)),
+                          child: Image.network(
+                            posts[index].picture,
+                            fit: BoxFit.cover,
+                            alignment: Alignment.topLeft,
+                            height: 100,
+                            width: 120,
+                          )),
+                    ],
+                  ),
+                );
               },
             )),
       ),

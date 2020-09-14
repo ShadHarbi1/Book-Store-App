@@ -5,6 +5,8 @@ import 'package:book_store_app/frontEnd/Screen/addProduct.dart';
 import 'package:book_store_app/frontEnd/Screen/homePage.dart';
 import 'package:book_store_app/frontEnd/Screen/loginPage.dart';
 import 'package:book_store_app/frontEnd/Screen/signupPage.dart';
+import 'package:book_store_app/constants/colors.dart';
+import 'package:book_store_app/frontEnd/widgets/catagoryGrid.dart';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -25,7 +27,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(),
+        theme: ThemeData(accentColor: CustomColors.customPage),
         debugShowCheckedModeBanner: false,
         home: LoginPage(),
         initialRoute: '/',
@@ -96,9 +98,9 @@ class _MyNavBarState extends State<MyNavBar> {
             Icon(Icons.home, size: 30), //home_page//the opening Page
             Icon(Icons.perm_identity, size: 30), //account_page
           ],
-          color: Colors.white,
-          buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.teal,
+          color: CustomColors.customPage,
+          buttonBackgroundColor: CustomColors.customPage,
+          backgroundColor: CustomColors.customDarkBlue,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
           onTap: (int tappedIndex) {
