@@ -19,7 +19,7 @@ class _SignupPageState extends State<SignupPage> {
   TextEditingController emailInputController = TextEditingController();
   TextEditingController pwdInputController = TextEditingController();
   DatabaseHelper databaseHelper = DatabaseHelper();
-  static var url = "http://192.168.1.5:5000/user/register";
+  static var url = "http://192.168.1.14:5000/user/register";
 
   Map data;
 

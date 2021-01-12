@@ -24,7 +24,7 @@ class _CatalogPageState extends State<CatalogPage> {
               width: size
                   .width, //Here the height of the container is 35% of our total height
               decoration: BoxDecoration(
-                  color: CustomColors.customPage,
+                  color: CustomColors.primaryLightWhite,
                   borderRadius: BorderRadius.only(
                       bottomLeft: const Radius.circular(30.0),
                       bottomRight: const Radius.circular(30.0))),

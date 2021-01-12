@@ -1,5 +1,4 @@
 import 'dart:ui';
-import '';
 import 'package:book_store_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +16,7 @@ class SearchBar extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 220, horizontal: 65),
             decoration: BoxDecoration(
-              color: CustomColors.customPage,
+              color: CustomColors.primaryLightWhite,
               borderRadius: BorderRadius.circular(29.5),
             ),
             child: TextField(

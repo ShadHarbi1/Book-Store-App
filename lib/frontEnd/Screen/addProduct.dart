@@ -1,3 +1,4 @@
+import 'package:book_store_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class AddProductPage extends StatefulWidget {
@@ -9,7 +10,7 @@ class _AddPageState extends State<AddProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: CustomColors.customDarkBlue,
       body: Container(),
     );
   }

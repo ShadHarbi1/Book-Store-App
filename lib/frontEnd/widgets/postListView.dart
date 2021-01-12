@@ -27,7 +27,7 @@ class PostListView extends StatelessWidget {
                   padding: const EdgeInsets.all(4.0),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
-                      color: CustomColors.customPage),
+                      color: Colors.white),
                   child: Row(
                     children: <Widget>[
                       Expanded(
